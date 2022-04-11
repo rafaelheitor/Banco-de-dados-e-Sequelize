@@ -4,7 +4,7 @@ const cursos = require('./routes/cursos')
 
 
 app.use(express.json())
-app.use('/escola', cursos)
+app.use('/', cursos)
 
 
 app.listen(3000, () => {

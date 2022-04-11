@@ -9,7 +9,6 @@ const cursoController =  {
             area:curso.dataValues.curso_area.dataValues.tipo,
             turma:curso.curso_turma.map(turma => turma.dataValues.id)
         }))
-        sequelize.close()
         return res.status(200).json({   
             sucess: true,
             cursos: cursosInfo

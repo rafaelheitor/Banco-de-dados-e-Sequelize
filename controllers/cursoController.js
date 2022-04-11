@@ -6,7 +6,8 @@ const cursoController =  {
         const cursosInfo = todosOscursos.map(curso => ({
             id:curso.dataValues.id,
             nome:curso.dataValues.nome,
-            area:curso.dataValues.curso_area.dataValues.tipo
+            area:curso.dataValues.curso_area.dataValues.tipo,
+            turma:curso.curso_turma.map(turma => turma.dataValues.id)
         }))
         sequelize.close()
         return res.json({   

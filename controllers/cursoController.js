@@ -10,7 +10,7 @@ const cursoController =  {
             turma:curso.curso_turma.map(turma => turma.dataValues.id)
         }))
         return res.status(200).json({   
-            sucess: true,
+            success: true,
             cursos: cursosInfo
         })
     }

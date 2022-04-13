@@ -173,3 +173,21 @@ Turma.findByPk(15, {
 
 Turma.findAll({include:['turma_curso', 'turma_professor', 'turma_alunos']})
 .then(turma => turma.forEach(t => console.log(t.toJSON())))
+
+Professor.findByPk(2,{
+    include:[{
+        model: Turma,
+        association: 'professor_turma',
+        required: false,
+        include:[{
+            model: Curso,
+            association: 'turma_curso',
+            required: false,
+            include:[{
+                model: Area,
+                association: 'curso_area',
+                required: false
+            }]
+        }]
+    }]
+}).then(professor => console.log(professor))
